@@ -1,8 +1,6 @@
 const mongoose = require('mongoose');
-const dns = require("dns")
-dns.setServer(["8.8.8.8",8.8.4.4"])
- 
-const dbURI = 'mongodb+srv://vishalkolli21:vishalchowdarykolli21@cluster0.8zoym81.mongodb.net/vishalchowdarykolli'; 
+
+const dbURI = 'mongodb+srv://badi:Shaik90141@cluster0.umvpmlg.mongodb.net/BMI?retryWrites=true&w=majority'; 
 
 const connectDB = () => {
   mongoose.connect(dbURI)
