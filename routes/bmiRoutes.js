@@ -13,16 +13,16 @@ router.get('/', async (req, res) => {
 
 router.post('/', async (req, res) => {
   try {
-    const { name, height, weight, bmi, category } = req.body;
+    const { name, age, height, weight, bmi, category } = req.body;
     
-    if (!name || !height || !weight || !bmi || !category) {
+    if (!name || !age || !height || !weight || !bmi || !category) {
       return res.status(400).json({ error: 'All fields are required.' });
     }
 
-    const newRecord = new BmiRecord({ name, height, weight, bmi, category });
+    const newRecord = new BmiRecord({ name, age, height, weight, bmi, category });
     await newRecord.save();
     
-    res.status(201).json({ message: 'Record saved successfully!' });
+    res.status(201).json(newRecord);
   } catch (err) {
     res.status(500).json({ error: 'Failed to save record.' });
   }
